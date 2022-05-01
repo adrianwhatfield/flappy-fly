@@ -21,7 +21,6 @@ func _physics_process(delta):
 		motion.y = MAXFALLSPEED
 	
 	if Input.is_action_pressed("ui_up"):
-		pass
 		motion.y = JUMP
 	
 	motion = move_and_slide(motion, Vector2.UP)
