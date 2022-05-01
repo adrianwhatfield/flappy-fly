@@ -23,3 +23,7 @@ func _physics_process(delta):
 		motion.y = MAXFALLSPEED
 	
 	motion = move_and_slide(motion, Vector2.UP)
+
+
+func _on_FallSpace_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	get_tree().reload_current_scene()
