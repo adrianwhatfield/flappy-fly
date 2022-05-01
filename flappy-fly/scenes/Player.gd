@@ -2,25 +2,27 @@ extends KinematicBody2D
 
 
 const UP = Vector2(0,-1)
-const JUMP = 100
-const GRAVITY = 2
-const MAXFALLSPEED = 200
+const JUMP = -100
+const GRAVITY = 200
+const MAXFALLSPEED = 1000
 
 var motion = Vector2()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	motion.y += GRAVITY + delta
+	motion.y += GRAVITY * delta
 	
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
+	
+	if Input.is_action_pressed("ui_up"):
+		pass
+		motion.y = JUMP
 	
 	motion = move_and_slide(motion, Vector2.UP)
 
