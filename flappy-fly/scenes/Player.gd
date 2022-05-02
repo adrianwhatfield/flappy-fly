@@ -22,6 +22,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_up"):
 		motion.y = JUMP
+		$AnimatedSprite.play()
 	
 	motion = move_and_slide(motion, Vector2.UP)
 
