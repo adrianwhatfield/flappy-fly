@@ -31,6 +31,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "flap"
-frame = 1
 speed_scale = 0.5
 playing = true
