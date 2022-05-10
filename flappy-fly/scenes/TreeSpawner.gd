@@ -6,8 +6,7 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	var treeTop = load("res://scenes/TreeTop.tscn").instance()
-	var treeBottom = load("res://scenes/TreeBottom.tscn").instance()
+	var trees = load("res://scenes/Trees.tscn").instance()
 	
-	add_child(treeTop)
-	add_child(treeBottom)
+	
+	add_child(trees)

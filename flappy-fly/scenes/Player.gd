@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Player
+
 
 const UP = Vector2(0,-1)
 const JUMP = -100
@@ -31,10 +33,3 @@ func _on_FallSpace_body_shape_entered(body_rid, body, body_shape_index, local_sh
 	get_tree().reload_current_scene()
 
 
-
-func _on_TreeBottom_body_entered(body):
-	get_tree().reload_current_scene()
-
-
-func _on_TreeTop_body_entered(body):
-	get_tree().reload_current_scene()

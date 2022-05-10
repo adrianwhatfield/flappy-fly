@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/TreeBottom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/TreeTop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Trees.gd" type="Script" id=3]
+
+[node name="Trees" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TreeTop" parent="." instance=ExtResource( 2 )]
+
+[node name="TreeBottom" parent="." instance=ExtResource( 1 )]
+
+[connection signal="body_entered" from="TreeTop" to="." method="_on_TreeTop_body_entered"]
+[connection signal="body_entered" from="TreeBottom" to="." method="_on_TreeBottom_body_entered"]
