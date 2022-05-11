@@ -1,5 +1,7 @@
 extends Node2D
 
+var score = 0
+onready var label = $ScoreHUD
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,10 +17,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func Score():
+	score = score + 1
+	label.set_text(score)
+	print(score)
 
-func _on_Timer_timeout():
-	var trees = load("res://scenes/Trees.tscn").instance()
-	
-	
-	add_child(trees)
 
